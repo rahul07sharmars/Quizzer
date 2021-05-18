@@ -31,7 +31,7 @@ class QuizBrain {
         true),
   ];
   void nextQuestion() {
-    if (_questionNumber < _questionBank.length-1) _questionNumber++;
+    if (_questionNumber < _questionBank.length - 1) _questionNumber++;
   }
 
   String getQuestion() {
@@ -44,5 +44,16 @@ class QuizBrain {
 
   int length() {
     return _questionBank.length;
+  }
+
+  bool isFinished() {
+    if (_questionNumber == _questionBank.length - 1)
+      return true;
+    else
+      return false;
+  }
+
+  void reset() {
+    _questionNumber = 0;
   }
 }
